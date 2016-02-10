@@ -10,7 +10,7 @@
 # -------------------------
 # Dzen settings & Variables
 # -------------------------
-ICONPATH="/home/annakay/.i3/icons/stlarch_icons"
+ICONPATH="/home/luciano/.i3/icons/stlarch_icons"
 COLOR_ICON="#EE3B3B"
 CRIT_COLOR="#ff2c4a"
 DZEN_FG="#A0A0A0"
@@ -18,8 +18,8 @@ DZEN_BG="#222222"
 HEIGHT=12
 WIDTH=0
 RESOLUTION=$(xrandr | grep " connected" | cut -d" " -f 3)
-RESOLUTIONW=$(echo $RESOLUTION | cut -d"x" -f1) 
-RESOLUTIONH=$(echo $RESOLUTION | cut -d"x" -f2 | cut -d'+' -f 1) 
+RESOLUTIONW=$(echo $RESOLUTION | cut -d"x" -f1)
+RESOLUTIONH=$(echo $RESOLUTION | cut -d"x" -f2 | cut -d'+' -f 1)
 X=$(($RESOLUTIONW-$WIDTH))
 Y=$(($RESOLUTIONH-$HEIGHT-1))
 BAR_FG="#EE3B3B"
@@ -33,7 +33,7 @@ SLEEP=5
 VUP="amixer -c0 -q set Master 2dB+"
 VDOWN="amixer -c0 -q set Master 2dB-"
 #EVENT="button3=exit;button4=exec:$VUP;button5=exec:$VDOWN"
-DZEN="dzen2 -fn $FONT -ta r -bg $DZEN_BG -fg $DZEN_FG -dock" 
+DZEN="dzen2 -fn $FONT -ta r -bg $DZEN_BG -fg $DZEN_FG -dock"
 
 # -------------
 # Infinite loop
@@ -65,7 +65,7 @@ Temp ()
 	TEMP=$(acpi -t | awk '{print $4}' | tr -d '.0')
 		if [[ ${TEMP} -gt 63 ]] ; then
 			echo -n "^fg($CRIT_COLOR)^i($ICONPATH/temp.xbm)^fg($CRIT_COLOR) ${TEMP}Â°C" $(echo ${TEMP} | gdbar -fg $CRIT_COLOR -bg $BAR_BG -h $BAR_H -s v -sw 5 -ss 0 -sh 1 -nonl)
-		else 
+		else
 			echo -n "^fg($COLOR_ICON)^i($ICONPATH/temp.xbm)^fg() ${TEMP}Â°C" $(echo ${TEMP} | gdbar -fg $BAR_FG -bg $BAR_BG -h $BAR_H -s v -sw 5 -ss 0 -sh 1 -nonl)
 		fi
 	return
@@ -129,10 +129,10 @@ Battery () {
             echo -n "^fg($COLOR_ICON)^i($ICONPATH/batt5full.xbm)^fg()"
         elif [[ $BAT_VAL -gt 30 ]]; then
             echo -n "^fg($COLOR_ICON)^i($ICONPATH/batt5half.xbm)^fg()"
-        else 
+        else
             echo -n "^fg($COLOR_ICON)^i($ICONPATH/batt5empty.xbm)^fg()"
         fi
-        
+
         echo -n " $BAT_PERCENT"
     else
         echo -n "^fg($COLOR_ICON)^i($ICONPATH/ac14.xbm)^fg()"
@@ -161,7 +161,7 @@ OSLogo ()
 # --------- End Of Functions
 
 # -----
-# Print 
+# Print
 # -----
 Print () {
 #		OSLogo
@@ -186,5 +186,5 @@ Print () {
     return
 }
 
-echo "$(Print)" 
+echo "$(Print)"
 done | $DZEN

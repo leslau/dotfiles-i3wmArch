@@ -91,31 +91,6 @@ class Base:
 		})
 
 
-	def Wireless(self):
-		try:
-			w = o(["iwconfig wlp0s29f7u1 | grep Quality"], shell=True)
-			s =  w.split("/")[0][-2:]
-			r = "signal: "
-			s = int(s)
-			if s == 0:
-				r += "offline"
-			if 0 < s <= 20:
-				r += "bad"
-			if 20 < s <= 46:
-				r += "ok"
-			if 46 < s < 60:
-				r += "good"
-			if s >= 60:
-				r += "excellent"
-
-			self.final.append({
-				"name" : "wireless_str",
-				"full_text" : r + self.spacer,
-				"color" : self.color_normal
-			})
-		except:
-			pass
-
 	def mail(self):
 		# Thanks to
 		# crunchbanglinux.org/forums/topic/16430/make-conky-check-gmail-using-https/
@@ -262,7 +237,6 @@ while True:
 	b.mail()				# email
 	b.leds()				# caps | numlock | scroll lock leds
 	b.volume()			        # volume
-	b.Wireless()		        # wireless signal
 	b.date()				# date
 
 	stdout.write(',' + json.dumps(b.final))

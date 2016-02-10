@@ -1,4 +1,3 @@
- 
 
 # i3 config file (v4)
 #xrdb ~/.Xresource
@@ -53,22 +52,17 @@ smart_gaps on
 for_window [class="^.*"] border pixel 2
 
 #====Startup Items======================================================
-#exec --no-startup-id nm-applet
 
 exec --no-startup-id compton -b
-exec --no-startup-id nitrogen --restore 
+exec --no-startup-id nitrogen --restore
 exec --no-startup-id transmission-daemon
 exec --no-startup-id wicd-gtk -t
 exec --no-startup-id sleep 3 && volumeicon
 exec --no-startup-id sleep 3 && xfce4-power-manager
 #exec --no-startup-id volwheel
-exec_always --no-startup-id parcellite 
+exec_always --no-startup-id parcellite
 exec --no-startup-id menutray -i -u -r
-exec --no-startup-id megasync
 exec --no-srartup-id xclip
-
-
-
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -76,18 +70,18 @@ floating_modifier $mod
 
 #====Vol Controls=======================================================
 
-#Playerctl 
+#Playerctl
 
 # make sure to have notify-osd installed!!!!!!!!!!
-bindsym XF86AudioRaiseVolume exec --no-startup-id ${HOME}/scripts/volumectl up 
-#bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
+#bindsym XF86AudioRaiseVolume exec --no-startup-id ${HOME}/scripts/volumectl up
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
 # decrease volume
-bindsym XF86AudioLowerVolume exec --no-startup-id ${HOME}/scripts/volumectl down
-#bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
+#bindsym XF86AudioLowerVolume exec --no-startup-id ${HOME}/scripts/volumectl down
+bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
 # mute volume
 
-bindsym XF86AudioMute exec --no-startup-id ${HOME}/scripts/volumectl toggle
-#indsym XF86AudioMute exec amixer -q set Master mute
+#bindsym XF86AudioMute exec --no-startup-id ${HOME}/scripts/volumectl toggle
+bindsym XF86AudioMute exec amixer -q set Master mute
 # pause / play / next / previous
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
@@ -131,7 +125,7 @@ bindsym $mod+d exec --no-startup-id j4-dmenu-desktop [--dmenu="dmenu -i"] [--ter
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+space exec dmenu_run -i 
+bindsym $mod+space exec dmenu_run -i
 
 
 # change focus
@@ -191,10 +185,10 @@ set $WS1 1:
 set $WS2 2:
 set $WS3 3:
 set $WS4 4:
-set $WS5 5: 
+set $WS5 5:
 set $WS6 6:
 set $WS7 7:
-set $WS8 8: 
+set $WS8 8:
 set $WS9 9:
 
 workspace_auto_back_and_forth yes
@@ -280,18 +274,18 @@ bindsym $mod+r mode "resize"
 
 
 
-bar {   
-        
+bar {
+
         position top
         status_command ~/.i3/conky.sh
         mode dock
-        
-      
+
+
 	    workspace_buttons yes
        # status_command ~/.i3/status.sh
        # tray_output none
-	   
-	   
+
+
  colors {
       background #220325
       statusline #605c5a
@@ -301,9 +295,3 @@ bar {
    	urgent_workspace #2e3436 #9a878f
 	}
 }
-
-
-
-
-
-

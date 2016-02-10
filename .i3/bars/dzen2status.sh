@@ -4,7 +4,7 @@
 # Dzen settings & Variables
 # -------------------------
 SLEEP=2
-ICONPATH="/home/annakay/.i3/icons/stlarch_icons"
+ICONPATH="/home/luciano/.i3/icons/stlarch_icons"
 COLOR_ICON="#BA2020"
 CRIT_COLOR="#ff2c4a"
 DZEN_FG="#A0A0A0"
@@ -51,7 +51,7 @@ Temp ()
 	TEMP=$(acpi -t | awk '{print $4}' | tr -d '.0')
 		if [[ ${TEMP} -gt 63 ]] ; then
 			echo -n "^fg($CRIT_COLOR)^i($ICONPATH/temp.xbm)^fg($CRIT_COLOR) ${TEMP}°C" $(echo ${TEMP} | gdbar -fg $CRIT_COLOR -bg $BAR_BG -h $BAR_H -s v -sw 5 -ss 0 -sh 1 -nonl)
-		else 
+		else
 			echo -n "^fg($COLOR_ICON)^i($ICONPATH/temp.xbm)^fg() ${TEMP}°C" $(echo ${TEMP} | gdbar -fg $BAR_FG -bg $BAR_BG -h $BAR_H -s v -sw 5 -ss 0 -sh 1 -nonl)
 		fi
 	return
@@ -121,7 +121,7 @@ OSLogo ()
 # --------- End Of Functions
 
 # -----
-# Print 
+# Print
 # -----
 Print () {
 	OSLogo
@@ -142,5 +142,5 @@ Print () {
     return
 }
 
-echo "$(Print)" 
+echo "$(Print)"
 done | $DZEN &
