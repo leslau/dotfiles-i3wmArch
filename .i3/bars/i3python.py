@@ -1,8 +1,6 @@
 #!/usr/bin/python2
 # coding: utf-8
 
-#TODO facebook notifications?
-
 import json
 from sys import stdout
 from time import sleep

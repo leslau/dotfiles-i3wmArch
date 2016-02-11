@@ -12,14 +12,11 @@ TEXT
 ,[{"full_text": ${if_mpd_playing} " ","color":  "\#b492b6"},
   {"full_text": "${mpd_artist 20} - ${mpd_title 30}","color":"\#b492b6"},
   $else""},$endif
-    {"full_text": " $kernel ","color": "\#303F9F"},
+  {"full_text": " $kernel ","color": "\#303F9F"},
   {"full_text": "   $acpitemp°C [$cpu%] [$cpubar]","color": "\#ff5252"},
   {"full_text": "   [$mem][$membar] ", "color":"\#FFA000"},
-  ${if_up enp0s3}{"full_text": "  enp4s0 ","color":"\#33CC99"},
+  ${if_up enp0s3}{"full_text": "  enp0s3 ","color":"\#33CC99"},
   $else{"full_text": " ≈ no connection ","color":"\#33CC99"},$endif
 
   { "full_text" : " ${time %b %d %Y %I:%M%P}", "color":"\#8BC34A"}
 ]
-
-#Alternate gmail python
-#{"full_text": "  ${execpi 60 python ~/.i3/gmail.py}","color":"\#00FF00"},

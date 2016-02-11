@@ -1,9 +1,6 @@
 #!/bin/bash
 
 # ------------------------------------------------------
-# file:     $HOME/.scripts/dzenstat.sh
-# author:   Ramon Solis - http://cyb3rpunk.wordpress.com
-# modified: June 2011
 # vim:fenc=utf-8:nu:ai:si:et:ts=4:sw=4:ft=sh:
 # ------------------------------------------------------
 
